@@ -106,11 +106,7 @@ def load(self, context, filepath=""):
 
         blend_mesh.to_mesh(new_mesh)
 
-        # Begin vertex normal assignment logic
-        new_mesh.create_normals_split()
-
-        for loop_idx, loop in enumerate(new_mesh.loops):
-            new_mesh.loops[loop_idx].normal = vertex_normal_buffer[loop_idx]
+        new_mesh.normals_split_custom_set(vertex_normal_buffer)
 
         new_mesh.validate(clean_customdata=False)
 
@@ -122,7 +118,6 @@ def load(self, context, filepath=""):
         new_mesh.polygons.foreach_set("use_smooth", [True] * polygon_count)
 
         new_mesh.normals_split_custom_set(tuple(zip(*(iter(clnors),) * 3)))
-        new_mesh.use_auto_smooth = True
 
         # Add the mesh to the scene
         obj = bpy.data.objects.new("%s_%s" % (
