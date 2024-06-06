@@ -9,12 +9,12 @@ from bpy.utils import unregister_class
 bl_info = {
     "name": "SEModel Support",
     "author": "DTZxPorter",
-    "version": (0, 0, 4),
-    "blender": (2, 80, 0),
+    "version": (0, 0, 5),
+    "blender": (4, 1, 0),
     "location": "File > Import",
     "description": "Import SEModel",
-    "wiki_url": "https://github.com/dtzxporter/io_model_semodel",
-    "tracker_url": "https://github.com/dtzxporter/io_model_semodel/issues",
+    "wiki_url": "https://github.com/Finnomator/io_model_semodel",
+    "tracker_url": "https://github.com/Finnomator/io_model_semodel/issues",
     "category": "Import-Export"
 }
 
